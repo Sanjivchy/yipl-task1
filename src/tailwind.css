@@ -3,7 +3,21 @@
 @tailwind components;
 @tailwind utilities;
 
-.footer__a{
+    :root{
+        --color-text-base:#ffffff;
+        --color-text-muted:#6a7582;
+        --color-text-header:#272D4E;
+        --color-text-darkmode:#e0e0e0;
+        --color-primaryfill:#7854F7;
+        --color-secondaryfill:#9A7DFF;
+
+
+    }
+#toggle:checked ~ label div.toggle-dot{
+    @apply translate-x-3;
+ }
+
+.footer__link{
     @apply text-gray-300 font-normal capitalize text-xs leading-3 cursor-pointer hover:text-gray-500;
 }
 
@@ -11,10 +25,10 @@
     @apply uppercase font-bold text-lg text-white;
 }
 
-.hero-section{
+/* .hero-section{
     background: linear-gradient(180deg, #E5EFFF 0%, rgba(229, 239, 255, 0.262661) 83.7%, rgba(229, 239, 255, 0) 100%);
-}
+} */
 
 .copyright--social{
-    @apply px-4 text-lg text-gray-800;
+    @apply px-4 text-lg text-gray-800 dark:text-skin-darkmode;
 }
