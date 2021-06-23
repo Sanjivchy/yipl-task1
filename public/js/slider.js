@@ -1,25 +1,32 @@
-window.onload = () => {
-	let sliderImagesBox = document.querySelectorAll('.cards-box');
-	sliderImagesBox.forEach(el => {
-		let imageNodes = el.querySelectorAll('.card:not(.hide)')
-		let arrIndexes = []; // Index array
-		(() => {
-			// The loop that added values to the arrIndexes array for the first time
-			let start = 0;
-			while (imageNodes.length > start) {
-				arrIndexes.push(start++);
-			}
-		})();
+$.fn.commentCards = function(){
 
-		let setIndex = (arr) => {
-			for(let i = 0; i < imageNodes.length; i++) {
-				imageNodes[i].dataset.slide = arr[i] // Set indexes
-			}
-		}
-		el.addEventListener('click', () => {
-			arrIndexes.unshift(arrIndexes.pop());
-			setIndex(arrIndexes)
-		})
-		setIndex(arrIndexes) // The first indexes addition
-	});
-};
+    return this.each(function(){
+  
+      var $this = $(this),
+          $cards = $this.find('.card'),
+          $current = $cards.filter('.card--current'),
+          $next;
+  
+      $cards.on('click',function(){
+        if ( !$current.is(this) ) {
+          $cards.removeClass('card--current card--out card--next');
+          $current.addClass('card--out');
+          $current = $(this).addClass('card--current');
+          $next = $current.next();
+          $next = $next.length ? $next : $cards.first();
+          $next.addClass('card--next');
+        }
+      });
+  
+      if ( !$current.length ) {
+        $current = $cards.last();
+        $cards.first().trigger('click');
+      }
+  
+      $this.addClass('cards--active');
+  
+    })
+  
+  };
+  
+  $('.cards').commentCards();
