@@ -16,7 +16,9 @@
 #toggle:checked ~ label div.toggle-dot{
     @apply translate-x-3;
  }
-
+.nav__link{
+    @apply py-5 px-3 text-skin-header dark:text-skin-darkmode capitalize hover:text-indigo-600 dark:hover:text-indigo-400;
+}
 .footer__link{
     @apply text-gray-300 font-normal capitalize text-xs leading-3 cursor-pointer hover:text-gray-500;
 }
