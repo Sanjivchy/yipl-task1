@@ -19,7 +19,8 @@ module.exports = {
       backgroundColor:{
         skin:{
           primaryFill:'var(--color-primaryfill)',
-          secondaryFill:'var(--color-secondaryfill)'
+          secondaryFill:'var(--color-secondaryfill)',
+          darkFill:'var(--color-darkfill)'
         }
       },   
     },
