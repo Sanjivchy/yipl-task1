@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="dark" >
+<html lang="en" class="dark">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,331 +8,419 @@
   <link rel="stylesheet" href="tailwind.css">
   <script src="https://kit.fontawesome.com/6ef2941c53.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://cdn.jsdelivr.net/gh/vaibhav111tandon/vov.css@latest/vov.css" rel="stylesheet" type="text/css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 
   <title>Responive Website Build</title>
 </head>
 
-<body class="dark:bg-skin-darkFill">
-<div class=" w-full m-0 p-0 box-border ">
-  <div class="h-full bg-gray-100  dark:bg-skin-darkFill">
+<body class="dark:bg-skin-darkFill font-Roboto">
+  <div class=" w-full m-0 p-0 box-border ">
+    <div class="h-full bg-gray-100  dark:bg-skin-darkFill">
 
-    <!-- ---------------dark mode toggle---------------- -->
+      <!-- ---------------dark mode toggle---------------- -->
 
-    <div class="flex flex-col md:flex-row justify-end items-center space-x-3 fixed right-2 md:top-4 top-12 rounded-full">
-          <span class="text-sm text-gray-800 dark:text-gray-200"><i class="far fa-lightbulb"></i>  </span>
-      <div> 
+      <div
+        class="flex flex-col md:flex-row justify-end items-center space-x-3 fixed right-2 md:top-4 top-12 rounded-full">
+        <span class="text-sm text-gray-800 dark:text-gray-200"><i class="far fa-lightbulb"></i> </span>
+        <div>
           <input type="checkbox" name="" id="toggle" class="hidden">
           <label for="toggle">
-              <div class="w-9 h-5 flex items-center dark:bg-gray-300 bg-gray-800 rounded-full p-1">
-                  <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out"> </div>
-              </div>
+            <div class="w-9 h-5 flex items-center dark:bg-gray-300 bg-gray-800 rounded-full p-1">
+              <div class="toggle-dot w-4 h-4 bg-white rounded-full shadow-md transform duration-300 ease-in-out"> </div>
+            </div>
           </label>
-      </div>
-      <span class="text-sm text-gray-600 dark:text-gray-200"><i class="far fa-moon"></i></span>
-  </div>
-<!-- ------------------------------------------------------------------------ -->
-    <!-- ----------------------------nav bar -->
-    <!-- navbar goes here -->
-<nav class="">
-  <div class="max-w-6xl mx-auto">
-    <div class="flex justify-between">
-
-      <div class="flex space-x-4">
-        <!-- logo -->
-        <div>
-          <a href="#" class="flex items-center py-5 px-2 animate-pulse">
-            <img src="images/LOGO.png" alt="">
-
-          </a>
         </div>
-
-        <!-- primary nav -->
-        <div class="hidden md:flex items-center space-x-1">
-          <a href="#" class="nav--link" > sell</a>
-          <a href="#" class="nav--link">marketplace</a>
-          <a href="#" class="nav--link">community</a>
-          <a href="#" class="nav--link">develop</a>
-          <a href="#" class="nav--link">resources</a>
-
-        </div>
+        <span class="text-sm text-gray-600 dark:text-gray-200"><i class="far fa-moon"></i></span>
       </div>
+      <!-- ------------------------------------------------------------------------ -->
+      <!-- ----------------------------nav bar -->
+      <!-- navbar goes here -->
+      <nav class="">
+        <div class="max-w-6xl mx-auto">
+          <div class="flex justify-between">
 
-      <!-- secondary nav -->
-      <div class="hidden md:flex items-center space-x-1">
-       
-      </div>
-      <div class="hidden md:flex items-center space-x-1">
-        <a href="" class="py-5 px-3 dark:text-skin-darkmode hover:text-indigo-700 dark:hover:text-indigo-500">Login</a>
-        <a href="" class="py-2 px-3 bg-skin-primaryFill hover:bg-indio-500 text-skin-base rounded transition duration-300 p-4">Set started</a>
-        <a href="#" class=" r"  ><i class="dark:text-skin-heade fas fa-search"></i></a>
-      </div>
-      
+            <div class="flex space-x-4">
+              <!-- logo -->
+              <div>
+                <a href="#" class="animate__animated animate__swing animate__slow animate__infinite  flex items-center py-5 px-2">
+                  <img src="images/LOGO.png" alt="">
+
+                </a>
+              </div>
+
+              <!-- primary nav -->
+              <div class="hidden md:flex items-center space-x-1">
+                <a href="#" class="nav--link"> sell</a>
+                <a href="#" class="nav--link">marketplace</a>
+                <a href="#" class="nav--link">community</a>
+                <a href="#" class="nav--link">develop</a>
+                <a href="#" class="nav--link">resources</a>
+
+              </div>
+            </div>
+
+            <!-- secondary nav -->
+            <div class="hidden md:flex items-center space-x-1">
+
+            </div>
+            <div class="hidden md:flex items-center space-x-1">
+              <a href=""
+                class="py-5 px-3 dark:text-skin-darkmode hover:text-indigo-700 dark:hover:text-indigo-500">Login</a>
+              <a href=""
+                class="py-2 px-3 bg-skin-primaryFill hover:bg-indio-500 text-skin-base rounded transition duration-300 p-4">Set
+                started</a>
+              <a href="#search" class="dark:text-gray-200 text-gray-700 hover:text-gray-500 openBtn" onclick="openSearch()">
+              <i  class="dark:text-skin-header fas fa-search"></i></a>
+            </div>
+
+            <!-- Search Form -->
+            <div id="myOverlay" class="overlay">
+              <span class="closebtn" onclick="closeSearch()" title="Close Overlay">×</span>
+              <div class="overlay-content">
+                <form action="/action_page.php">
+                  <input type="text" placeholder="Search.." name="search">
+                  <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+            </div>
 
 
-      <!-- mobile button goes here -->
-      <div class="md:hidden flex items-center">
-        <button class="mobile-menu-button">
-          <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
+            <!-- mobile button goes here -->
+            <div class="md:hidden flex items-center">
+              <button class="mobile-menu-button">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                  stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
+            </div>
 
-    </div>
-  </div>
-
-  <!-- mobile menu -->
-  <div class="mobile-menu hidden md:hidden">
-    <a href="#" class="nav--link__mobile">sell</a>
-    <a href="#" class="nav--link__mobile">marketplace</a>
-    <a href="#" class="nav--link__mobile">community</a>
-    <a href="#" class="nav--link__mobile">develop</a>
-    <a href="#" class="nav--link__mobile">resources</a>
-  </div>
-</nav>
-
-   
-    <!-- ---------------------------------- body------------------------------------------------- -->
-    <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 w-full text-base">
-      <div class="flex flex-col md:justify-center items-start w-full md:pl-32 pl-12 pt-8 md:pt-1">
-        <h1 class=" font-bold md:text-6xl text-4xl text-skin-header dark:text-skin-darkmode leading-none text-left">Building exactly the eCommerce website you want.</h1>
-        <p class="font-normal md:text-lg text-base text-skin-muted leading-6 py-3 dark:text-skin-darkmode" > WooCommerce is a customizable, open-source eCommerce platform built on WordPress. Get started quickly and
-          make your way.</p>
-          <div class="flex-row mt-4"> 
-            <a class="md:px-8 md:py-4  px-6 py-3 rounded-full  bg-skin-primaryFill text-blue-100 border-solid hover:bg-gray-300 hover:text-gray-700" href="">start a new store</a>
-            <a class="md:text-lg text-base leading-6 text-blue-700 dark:hover:text-gray-300 hover:text-gray-600 "  href=""><span class="text-skin-muted" >or</span> Customize & Extend ›</a>
           </div>
-      </div>
+        </div>
+
+        <!-- mobile menu -->
+        <div class="mobile-menu hidden md:hidden">
+          <a href="#" class="nav--link__mobile">sell</a>
+          <a href="#" class="nav--link__mobile">marketplace</a>
+          <a href="#" class="nav--link__mobile">community</a>
+          <a href="#" class="nav--link__mobile">develop</a>
+          <a href="#" class="nav--link__mobile">resources</a>
+        </div>
+      </nav>
+
+
+      <!-- ---------------------------------- body------------------------------------------------- -->
+      <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 w-full text-base">
+        <div class="flex flex-col md:justify-center items-start w-full md:pl-32 pl-12 pt-8 md:pt-1">
+          <h1
+            class=" font-bold md:text-6xl text-4xl text-skin-header dark:text-skin-darkmode leading-none text-left vov slide-in-left fast">
+            Building exactly the eCommerce website you want.</h1>
+          <p class="font-normal md:text-lg text-base text-skin-muted leading-6 py-3 dark:text-skin-darkmode ">
+            WooCommerce is a customizable, open-source eCommerce platform built on WordPress. Get started quickly and
+            make your way.</p>
+          <div class="flex-row mt-4">
+            <a class="md:px-8 md:py-4  px-6 py-3 rounded-full  bg-skin-primaryFill text-blue-100 border-solid hover:bg-gray-300 hover:text-gray-700 transition delay-150 duration-300 "
+              href="">start a new store</a>
+            <a class=" md:text-lg text-base leading-6 text-blue-700 dark:hover:text-gray-300 hover:text-gray-600 transition delay-150 duration-300 ease-in-out "
+              href=""><span class="text-skin-muted">or</span> Customize & Extend ›</a>
+          </div>
+        </div>
         <div class="mt-20 md:w-full max-w-screen-md h-auto w-4/5 mx-auto ">
           <img src="images/featured-image.png" alt="">
         </div>
       </div>
-  </div>
-
-
-
-  <!-------------------------------- features sections ---------------------------------->
-  <section class="m-14" >
-      <h1 class="text-center dark:text-skin-darkmode font-bold md:text-6xl text-3xl text-skin-header pb-8" >Your eCommerce made simple</h1>
-
-    <div class="grid md:grid-cols-3 grid-cols-1">
-      <div class="">
-        <img class="w-full" src="images/feature/Rectangle 223.png" alt="pc image" loading="lazy">
-        <h1 class="md:text-4xl dark:text-skin-darkmode text-3xl font-bold md:pl-14 pl-6 text-skin-header" >All You Need to Start</h1>
-        <p class="md:pl-14 pl-6 md:text-lg dark:text-skin-darkmode text-base font-normal text-skin-muted my-3">Add WooCommerce plugin to any WordPress site and set up a new store in minutes.</p>
-        <a  class="md:pl-14 pl-6 text-blue-600 md:text-lg text-base dark:hover:text-gray-300 hover:text-gray-600 " href="">Ecommerce for Wordpress ›</a>
-      </div>
-
-      <div class="pt-8" >
-        <img class="w-full"  src="images/feature/Rectangle 223.png" alt="" loading="lazy">
-        <h1 class="md:text-4xl dark:text-skin-darkmode text-3xl font-bold md:pl-14 pl-6 text-skin-header" > Customize and Extend</h1>
-        <p class="md:pl-14 pl-6 md:text-lg text-base dark:text-skin-darkmode font-normal text-skin-muted my-3">From subscriptions to gym classes to luxury cars, WooCommerce is fully customizable.</p>
-        <a class="md:pl-14 pl-6 text-blue-600 md:text-lg text-base dark:hover:text-gray-300 hover:text-gray-600 " href="">Browse Extensions ›</a>
-      </div>
-      <div class="pt-8" >
-        <img class="w-full" src="images/feature/Rectangle 223.png" alt="" loading="lazy">
-        <h1 class="md:text-4xl dark:text-skin-darkmode text-3xl font-bold pmd:pl-14 pl-6 text-skin-header">Active Community</h1>
-        <p class="md:pl-14 pl-6 md:text-lg text-base dark:text-skin-darkmode font-normal text-skin-muted my-3">WooCommerce is one of the fastest-growing eCommerce communities. </p>
-        <a  class="md:pl-14 pl-6 text-blue-600 md:text-lg text-base dark:hover:text-gray-300 hover:text-gray-600 " href="">Check our Forums ›</a>
-
-      </div>
     </div>
-  </section>
 
 
 
-<!-- -------------------------------------section----------------------------- -->
+    <!-------------------------------- features sections ---------------------------------->
+    <section class="m-14">
+      <h1 class=" animate__animated infinity animate__headShake animate__slow animate__infinite text-center dark:text-skin-darkmode font-bold md:text-6xl text-3xl text-skin-header pb-8">Your
+        eCommerce made simple</h1>
+
+      <div class="grid md:grid-cols-3 grid-cols-1">
+        <div class="">
+          <img class="w-full" src="images/feature/Rectangle 223.png" alt="pc image" loading="lazy">
+          <h1 class="md:text-4xl dark:text-skin-darkmode text-3xl font-bold md:pl-14 pl-6 text-skin-header">All You Need
+            to Start</h1>
+          <p class="md:pl-14 pl-6 md:text-lg dark:text-skin-darkmode text-base font-normal text-skin-muted my-3">Add
+            WooCommerce plugin to any WordPress site and set up a new store in minutes.</p>
+          <a class="md:pl-14 pl-6 text-blue-600 md:text-lg text-base dark:hover:text-gray-300 hover:text-gray-600 transition delay-150 duration-300 ease-in-out "
+            href="">Ecommerce for Wordpress ›</a>
+        </div>
+
+        <div class="pt-8">
+          <img class="w-full" src="images/feature/Rectangle 223.png" alt="" loading="lazy">
+          <h1 class="md:text-4xl dark:text-skin-darkmode text-3xl font-bold md:pl-14 pl-6 text-skin-header"> Customize
+            and Extend</h1>
+          <p class="md:pl-14 pl-6 md:text-lg text-base dark:text-skin-darkmode font-normal text-skin-muted my-3">From
+            subscriptions to gym classes to luxury cars, WooCommerce is fully customizable.</p>
+          <a class="md:pl-14 pl-6 text-blue-600 md:text-lg text-base dark:hover:text-gray-300 hover:text-gray-600 transition delay-150 duration-300 ease-in-out"
+            href="">Browse Extensions ›</a>
+        </div>
+        <div class="pt-8">
+          <img class="w-full" src="images/feature/Rectangle 223.png" alt="" loading="lazy">
+          <h1 class="md:text-4xl dark:text-skin-darkmode text-3xl font-bold pmd:pl-14 pl-6 text-skin-header">Active
+            Community</h1>
+          <p class="md:pl-14 pl-6 md:text-lg text-base dark:text-skin-darkmode font-normal text-skin-muted my-3">
+            WooCommerce is one of the fastest-growing eCommerce communities. </p>
+          <a class="md:pl-14 pl-6 text-blue-600 md:text-lg text-base dark:hover:text-gray-300 hover:text-gray-600 transition delay-150 duration-300 ease-in-out"
+            href="">Check our Forums ›</a>
+
+        </div>
+      </div>
+    </section>
 
 
-  <section class="h-auto" >
-    <div class="grid grid-cols-1 bg-skin-primaryFill dark:bg-skin-darkFill pb-5" >
-      <div class="flex flex-col md:flex-row md:px-36 px-0 justify-center items-center " > 
-        <img class="max-w-md md:w-full w-3/4" src="images/feature/section1.png" alt="" loading="lazy">
 
-        <div class=" flex-col justify-center items-center md:ml-0 ml-10 pt-16" >
-          <h1 class="md:text-4xl text-3xl font-bold text-skin-base leading-10" >Develop 
-            Without Limits</h1>
-            <p class=" text-gray-200 font-medium md:text-lg text-base leading-8 my-8 ">  WooCommerce is developer friendly, too. Built with a REST API, WooCommerce is scalable and can integrate with virtually any service. Design a complex store from scratch, extend a store for a client, or simply add a single product to a WordPress site—your store, your way.</p>
-            <a class="rounded-full md:px-12 md:py-4 px-7 py-3 md:text-lg text-base font-medium text-skin-base bg-yellow-500 hover:bg-transparent border-2"  href="">Read the  Documentation</a>
+    <!-- -------------------------------------section----------------------------- -->
+
+
+    <section class="h-auto">
+      <div class="grid grid-cols-1 bg-skin-primaryFill dark:bg-skin-darkFill pb-5">
+        <div class="flex flex-col md:flex-row md:px-36 px-0 justify-center items-center " data-aos="fade-right">
+          <img class="max-w-md md:w-full w-3/4" src="images/feature/section1.png" alt="" loading="lazy">
+
+          <div class=" flex-col justify-center items-center md:ml-0 ml-10 pt-16">
+            <h1 class="md:text-4xl text-3xl font-bold text-skin-base leading-10">Develop
+              Without Limits</h1>
+            <p class=" text-gray-200 font-medium md:text-lg text-base leading-8 my-8 "> WooCommerce is developer
+              friendly, too. Built with a REST API, WooCommerce is scalable and can integrate with virtually any
+              service. Design a complex store from scratch, extend a store for a client, or simply add a single product
+              to a WordPress site—your store, your way.</p>
+            <a class="rounded-full md:px-12 md:py-4 px-7 py-3 md:text-lg text-base font-medium text-skin-base bg-yellow-500 hover:bg-transparent border-2"
+              href="">Read the Documentation</a>
           </div>
 
+        </div>
+
+        <div class="flex flex-col md:flex-row md:px-36 px-0 items-center " data-aos="fade-left">
+          <div class="mt-10 ml-10">
+            <h1 class="md:text-4xl text-3xl font-bold text-skin-base leading-10">Know our
+              Global Community</h1>
+            <p class="text-gray-200 font-medium md:text-lg text-base leading-8 my-8">WooCommerce is one of the
+              fastest-growing eCommerce communities. We’re proud that the helpfulness of the community and a wealth of
+              online resources are frequently cited as reasons our users love it. There are 80+ meetups worldwide!</p>
+            <a class="rounded-full md:px-12 md:py-4 px-7 py-3 md:text-lg text-base font-medium text-skin-base bg-yellow-500 hover:bg-transparent border-2"
+              href="">Read the Documentation</a>
+          </div>
+          <img class="max-w-md md:w-full w-3/4 " src="images/feature/section2.png" alt="">
+
+        </div>
+      </div>
+    </section>
+
+
+
+
+    <!-- ------------------------------------------Sliderrr---------------------------------------------------------- -->
+    <section class="w-full text-center  dark:bg-skin-darkFill slider">
+      <h1 class="animate__animated infinity animate__headShake animate__slow animate__infinite md:text-5xl text-3xl text-skin-header dark:text-skin-darkmode capitalize font-bold leading-10 py-8">
+        Tursted by Agencies & Store Owners</h1>
+      <ul class="cards">
+
+        <li class="card">
+          <h1 class="card--header">Comment Card # </h1>
+
+          <p class="card--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem
+            vel tincidunt imperdiet, nibh elit laoreet felis, a bibendum nisl tortor non orci. Donec pretium fermentum
+            felis, quis aliquet est rutrum ut. Integer quis massa ut lacus viverra pharetra in eu lacus. Aliquam tempus
+            odio adipiscing diam pellentesque rhoncus. Curabitur a bibendum est. Mauris vehicula cursus risus id luctus.
+            Curabitur accumsan venenatis nibh, non egestas ipsum vulputate ac. Vivamus consectetur dolor sit amet enim
+            aliquet eu scelerisque ipsum hendrerit. Donec lobortis suscipit vestibulum.</p>
+        </li>
+        <li class="card">
+          <h1>Comment Card # </h1>
+
+          <p>Vestibulum nunc massa, gravida quis porta nec, feugiat id metus. Nunc ac arcu dolor, quis vestibulum leo.
+            Cras viverra mollis ipsum, non rhoncus lectus aliquam et. Morbi faucibus purus sit amet lacus aliquet
+            elementum. Donec sit amet posuere enim. Cras in eros id tortor fringilla ultricies. Mauris faucibus
+            ullamcorper velit, pulvinar varius odio eleifend eu. Quisque id odio metus. Morbi adipiscing ultricies
+            posuere. Pellentesque elementum porttitor eros in molestie. Maecenas ut leo quis nisi tempor tincidunt.</p>
+        </li>
+        <li class="card">
+          <h1>Comment Card #</h1>
+
+          <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet
+            vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam
+            urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt
+            a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel
+            faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat.
+            Vivamus facilisis ultricies eros, a pretium purus mollis id.</p>
+
+        </li>
+        <li class="card">
+          <h1>Comment Card #</h1>
+
+          <p>, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio.
+            In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros
+            eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed.
+            Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut
+            neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque
+            vel neque sapien, et sagittis nulla.</p>
+
+        </li>
+      </ul>
+    </section>
+    <!-- --------------------------------------------------------------------------------------------------- -->
+
+
+    <section>
+      <div class="w-full h-auto  ">
+        <div class="text-center h-96 mb-8 md:pb-24 pb-0">
+          <h1
+            class="animate__animated infinity animate__headShake animate__slow animate__infinite md:text-5xl text-3xl text-skin-header dark:text-skin-darkmode capitalize font-bold leading-10 py-8">
+            supported by real people</h1>
+          <p class=" mx-auto md:text-lg w-5/12 text-skin-muted dark:text-skin-darkmode text-sm">Our team of Happiness
+            Engineers works remotely from 58 countries providing customer support across multiple time zones.</p>
+        </div>
+
+        <div class="relative w-full flex flex-col justify-center items-center md:pt-24 pt-0 pb-0 mb-0 ">
+          <img class=" absolute bottom-0 w-9/12 z-10 mx-auto" src="images/image 24.png" alt="" loading="lazy">
+          <img class="absolute bottom-0 w-6/12 " src="images/Rectangle 235.png" alt="rec" loading="lazy">
+          <img class="absolute bottom-0 w-1/6 left-0" src="images/Group 5.png" alt="" loading="lazy">
+          <img class="absolute bottom-0 w-1/6 right-24" src="images/Group 6.png" alt="" loading="lazy">
+        </div>
+
       </div>
 
-      <div class="flex flex-col md:flex-row md:px-36 px-0 items-center">
-        <div class="mt-10 ml-10">
-          <h1 class="md:text-4xl text-3xl font-bold text-skin-base leading-10">Know our 
-            Global Community</h1>
-            <p  class="text-gray-200 font-medium md:text-lg text-base leading-8 my-8">WooCommerce is one of the fastest-growing eCommerce communities. We’re proud that the helpfulness of the community and a wealth of online resources are frequently cited as reasons our users love it. There are 80+ meetups worldwide!</p>
-            <a class="rounded-full md:px-12 md:py-4 px-7 py-3 md:text-lg text-base font-medium text-skin-base bg-yellow-500 hover:bg-transparent border-2" href="">Read the  Documentation</a>
-        </div>
-        <img class="max-w-md md:w-full w-3/4 " src="images/feature/section2.png" alt="">
-    
-      </div>
   </div>
+
+  <div class="bg-skin-primaryFill dark:bg-skin-darkFill w-full py-24 mt-0 flex md:flex-row flex-col">
+    <h1 class=" justify-self-center w-9/12 self-center md:text-4xl text-2xl text-gray-100 mx-auto"> WooCommerce - the
+      <span class="font-bold">most customizable eCommerce platform </span>for building <span class="font-bold"> your
+        online business.</span></h1>
+    <a class=" justify-self-center self-center border rounded-full text-gray-100 mt-7 mr-11 py-3 px-8 hover:bg-skin-secondaryFill dark:hover:bg-skin-primaryFill "
+      href="">Get Started</a>
+  </div>
+
+
   </section>
 
 
 
+  <!------------------------ footer-------------------------------------------------- -->
 
-<!-- ------------------------------------------Sliderrr---------------------------------------------------------- -->
-<section class="w-full text-center  dark:bg-skin-darkFill" >
-  <h1 class="md:text-5xl text-3xl text-skin-header dark:text-skin-darkmode capitalize font-bold leading-10 py-8">Tursted by Agencies & Store Owners</h1>
-  <ul class="cards">
-  
-    <li class="card">
-      <h1>Comment Card 1 </h1>
-      
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent bibendum, lorem vel tincidunt imperdiet, nibh elit laoreet felis, a bibendum nisl tortor non orci. Donec pretium fermentum felis, quis aliquet est rutrum ut. Integer quis massa ut lacus viverra pharetra in eu lacus. Aliquam tempus odio adipiscing diam pellentesque rhoncus. Curabitur a bibendum est. Mauris vehicula cursus risus id luctus. Curabitur accumsan venenatis nibh, non egestas ipsum vulputate ac. Vivamus consectetur dolor sit amet enim aliquet eu scelerisque ipsum hendrerit. Donec lobortis suscipit vestibulum. Nullam luctus pellentesque risus in ullamcorper. Nam neque nunc, mattis vitae ornare ut, feugiat a erat. Ut tempus iaculis augue vel pellentesque.</p>
-    </li>
-    <li class="card">
-      <h1>Comment Card 2 </h1>
-  
-      <p>Vestibulum nunc massa, gravida quis porta nec, feugiat id metus. Nunc ac arcu dolor, quis vestibulum leo. Cras viverra mollis ipsum, non rhoncus lectus aliquam et. Morbi faucibus purus sit amet lacus aliquet elementum. Donec sit amet posuere enim. Cras in eros id tortor fringilla ultricies. Mauris faucibus ullamcorper velit, pulvinar varius odio eleifend eu. Quisque id odio metus. Morbi adipiscing ultricies posuere. Pellentesque elementum porttitor eros in molestie. Maecenas ut leo quis nisi tempor tincidunt.</p>
-    </li>
-    <li class="card">
-      <h1>Comment Card 3</h1>
-  
-      <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et sagittis nulla.</p>
-  
-    </li>
-    <li class="card">
-      <h1>Comment Card 4</h1>
-  
-      <p>Donec nunc ligula, vulputate quis mollis eu, interdum quis libero. Donec nulla ante, facilisis sit amet vulputate at, tincidunt a velit. Maecenas vestibulum, nulla sed tincidunt viverra, lorem turpis aliquam urna, ut pretium orci purus consequat augue. Etiam a enim orci, vitae pulvinar odio. In elit urna, tincidunt a pellentesque et, scelerisque at nibh. Sed nec est sapien. Aliquam ullamcorper eros eu quam ultrices vel faucibus eros interdum. Etiam mattis eleifend sapien, eu iaculis massa feugiat sed. Aliquam erat volutpat. Vivamus facilisis ultricies eros, a pretium purus mollis id. Sed dapibus elit ut neque rutrum dignissim. Nulla eros nisl, venenatis quis rhoncus sit amet, molestie nec nisl. Pellentesque vel neque sapien, et sagittis nulla.</p>
-  
-    </li>
-  </ul>
-</section>
-<!-- --------------------------------------------------------------------------------------------------- -->
-
-
- <section>
-   <div class="w-full h-auto  "> 
-    <div class="text-center h-96 mb-8 md:pb-24 pb-0">
-        <h1 class=" md:text-5xl text-3xl text-skin-header dark:text-skin-darkmode capitalize font-bold leading-10 py-8"> supported by real people</h1>
-        <p class=" mx-auto md:text-lg w-5/12 text-skin-muted dark:text-skin-darkmode text-sm">Our team of Happiness Engineers works remotely from 58 countries providing customer support across multiple time zones.</p>   
-     </div>
-
-    <div class="relative w-full flex flex-col justify-center items-center md:pt-24 pt-0 pb-0 mb-0 ">
-            <img class=" absolute bottom-0 w-9/12 z-10 mx-auto" src="images/image 24.png" alt="" loading="lazy">
-            <img class="absolute bottom-0 w-6/12 " src="images/Rectangle 235.png" alt="rec" loading="lazy">
-            <img class="absolute bottom-0 w-1/6 left-0"  src="images/Group 5.png" alt="" loading="lazy">
-            <img class="absolute bottom-0 w-1/6 right-24"  src="images/Group 6.png" alt="" loading="lazy">
+  <footer>
+    <div class="bg-skin-secondaryFill dark:bg-skin-darkFill pt-7">
+      <div class="flex md:justify-around justify-center items-center flex-col md:flex-row ">
+        <h2 class="text-skin-base"><i class="text-xl pr-2 far fa-check-circle"></i>30 day <strong> money back
+            guarantee</strong> </h2>
+        <h2 class="text-skin-base py-10"><i class="text-xl pr-2 far fa-life-ring"></i><strong>Support</strong> teams
+          across the world</h2>
+        <h2 class="text-skin-base"><i class="text-xl pr-2 fas fa-lock-open"></i><strong>Safe & Secure</strong> online
+          payment</h2>
+      </div>
+      <div class=" animate__animated animate__swing animate__slow animate__infinite w-full my-24">
+       <a href=""><img class="mx-auto" src="images/LOGObw.png " alt="logo" loading="lazy"></a> 
+      </div>
+      <hr>
+      <div class="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 my-14 pl-6">
+        <div>
+          <h1 class="footer__h1 ">who we are</h1>
+          <ul>
+            <li><a class="footer__link">about</a></li>
+            <li><a class="footer__link">team</a></li>
+            <li><a class="footer__link">work with us</a></li>
+          </ul>
         </div>
-    
-    </div>
-
-   </div>
-
-<div class="bg-skin-primaryFill dark:bg-skin-darkFill w-full py-24 mt-0 flex md:flex-row flex-col">
-        <h1 class=" justify-self-center w-9/12 self-center md:text-4xl text-2xl text-gray-100 mx-auto"> WooCommerce - the <span class="font-bold">most customizable eCommerce platform </span>for building <span class="font-bold"> your online business.</span></h1>
-        <a class=" justify-self-center self-center border rounded-full text-gray-100 mt-7 mr-11 py-3 px-8 hover:bg-skin-secondaryFill dark:hover:bg-skin-primaryFill " href="">Get Started</a>
-    </div>
-
-    
- </section>
-
-
- 
- <!------------------------ footer-------------------------------------------------- -->
- 
- <footer>
-     <div class="bg-skin-secondaryFill dark:bg-skin-darkFill pt-7"> 
-         <div class="flex md:justify-around justify-center items-center flex-col md:flex-row ">
-            <h2 class="text-skin-base" ><i class="text-xl pr-2 far fa-check-circle"></i>30 day <strong> money back guarantee</strong> </h2>
-             <h2 class="text-skin-base py-10"><i class="text-xl pr-2 far fa-life-ring"></i><strong>Support</strong> teams across the world</h2>
-             <h2 class="text-skin-base"><i class="text-xl pr-2 fas fa-lock-open"></i><strong>Safe & Secure</strong> online payment</h2>
-         </div>
-         <div class="w-full my-24">
-             <img class="mx-auto" src="images/LOGObw.png " alt="logo" loading="lazy">
-         </div>
-         <hr> 
-         <div class="grid md:grid-cols-5 sm:grid-cols-3 grid-cols-2 my-14 pl-6"> 
-             <div>
-                 <h1 class="footer__h1 animate-bounce ">who we are</h1>
-                 <ul>
-                     <li><a class="footer__link" >about</a></li>
-                     <li><a class="footer__link" >team</a></li>
-                     <li><a class="footer__link" >work with us</a></li>
-                 </ul>
-             </div>
-             <div>
-                 <h1 class="footer__h1 animate-bounce">WooCommerce</h1>
-                 <ul>
-                     <li><a class="footer__link">features</a></li>
-                     <li><a class="footer__link">payments</a></li>
-                     <li><a class="footer__link">marketing</a></li>
-                     <li><a class="footer__link">shipping</a></li>
-                     <li><a class="footer__link" href="">extension store</a></li>
-                     <li><a class="footer__link" href="">eCommerce blog</a> </li>
-                     <li><a class="footer__link" href="">development blog</a> </li>
-                     <li><a class="footer__link" href="">ideas board</a> </li>
-                     <li><a class="footer__link" href="">mobile app</a> </li>
-                     <li><a class="footer__link" href="">community</a> </li>
-                     <li><a class="footer__link" href="">style guide</a> </li>
-                     <li><a class="footer__link" href="">email newsletter</a> </li>
-                 </ul>
-            </div>
-             <div>
-                <h1 class="footer__h1 animate-bounce">other products</h1>
-                <ul>
-                    <li><a class="footer__link" href="">storefront</a> </li>
-                    <li><a class="footer__link" href="">wooslider</a> </li>
-                    <li><a class="footer__link" href="">sensei</a> </li>
-                    <li><a class="footer__link" href="">sensei extension</a> </li>
-                </ul>
-            </div>
-             <div>
-                 <h1 class="footer__h1 animate-bounce" >Support</h1>
-                 <ul>
-                     <li><a class="footer__link"  href=""> documentation</a></li>
-                     <li><a class="footer__link"  href="">customization</a> </li>
-                     <li><a class="footer__link" href="">support policy</a> </li>
-                     <li><a class="footer__link"  href="">contact</a> </li>
-                     <li><a class="footer__link"  href="">covid-19 resources</a> </li>
-                     <li><a class="footer__link"  href=""> privacy notice for</a></li>
-                     <li><a  class="footer__link"  href="">california users</a> </li>
-                 </ul>
-             </div>
-             <div>
-                 <h1 class="footer__h1 animate-bounce">we recommend</h1>
-                 <ul>
-                     <li><a class="footer__link"  href="">wooexperts</a> </li>
-                     <li><a class="footer__link"  href="">hosting solutions</a> </li>
-                     <li><a class="footer__link"  href="">pre-sales FAQ</a> </li>
-                     <li><a class="footer__link"  href="">success stories</a> </li>
-                     <li><a class="footer__link"  href="">design feedback group</a> </li>
-                 </ul>
-            </div>
-         </div>
-
-         <div class="flex bg-gray-100 dark:bg-skin-darkFill w-full md:h-9 md:flex-row flex-col justify-around items-center mt-7">
-
-            <div>
-                <a class="copyright--social" href=""><i class="fab fa-facebook"></i></a>
-                <a class="copyright--social" href=""><i class="fab fa-twitter"></i></a>
-                <a class="copyright--social" href=""><i class="fas fa-rss-square"></i></a>
-                <a class="copyright--social" href=""><i class="fab fa-instagram-square"></i></a>
-            </div>
-            <div>
-                <h2 class="md:text-sm text-xs text-gray-800 dark:text-skin-darkmode"> COPYRIGHT WOOCOMMERCE 2020 - TERMS & CONDITIONS PRIVACY POLICY</h2>
-            </div>
-            <div>
-                <a  href="#"><img class="w-40"  src="images/footerlogo.png" alt="" loading="lazy"></a>
-            </div>
+        <div>
+          <h1 class="footer__h1">WooCommerce</h1>
+          <ul>
+            <li><a class="footer__link">features</a></li>
+            <li><a class="footer__link">payments</a></li>
+            <li><a class="footer__link">marketing</a></li>
+            <li><a class="footer__link">shipping</a></li>
+            <li><a class="footer__link" href="">extension store</a></li>
+            <li><a class="footer__link" href="">eCommerce blog</a> </li>
+            <li><a class="footer__link" href="">development blog</a> </li>
+            <li><a class="footer__link" href="">ideas board</a> </li>
+            <li><a class="footer__link" href="">mobile app</a> </li>
+            <li><a class="footer__link" href="">community</a> </li>
+            <li><a class="footer__link" href="">style guide</a> </li>
+            <li><a class="footer__link" href="">email newsletter</a> </li>
+          </ul>
         </div>
+        <div>
+          <h1 class="footer__h1 ">other products</h1>
+          <ul>
+            <li><a class="footer__link" href="">storefront</a> </li>
+            <li><a class="footer__link" href="">wooslider</a> </li>
+            <li><a class="footer__link" href="">sensei</a> </li>
+            <li><a class="footer__link" href="">sensei extension</a> </li>
+          </ul>
+        </div>
+        <div>
+          <h1 class="footer__h1 ">Support</h1>
+          <ul>
+            <li><a class="footer__link" href=""> documentation</a></li>
+            <li><a class="footer__link" href="">customization</a> </li>
+            <li><a class="footer__link" href="">support policy</a> </li>
+            <li><a class="footer__link" href="">contact</a> </li>
+            <li><a class="footer__link" href="">covid-19 resources</a> </li>
+            <li><a class="footer__link" href=""> privacy notice for</a></li>
+            <li><a class="footer__link" href="">california users</a> </li>
+          </ul>
+        </div>
+        <div>
+          <h1 class="footer__h1">we recommend</h1>
+          <ul>
+            <li><a class="footer__link" href="">wooexperts</a> </li>
+            <li><a class="footer__link" href="">hosting solutions</a> </li>
+            <li><a class="footer__link" href="">pre-sales FAQ</a> </li>
+            <li><a class="footer__link" href="">success stories</a> </li>
+            <li><a class="footer__link" href="">design feedback group</a> </li>
+          </ul>
+        </div>
+      </div>
 
-     </div>   
- </footer>
+      <div
+        class="flex bg-gray-100 dark:bg-skin-darkFill w-full md:h-9 md:flex-row flex-col justify-around items-center mt-7">
+
+        <div>
+          <a class="copyright--social" href=""><i class="fab fa-facebook"></i></a>
+          <a class="copyright--social" href=""><i class="fab fa-twitter"></i></a>
+          <a class="copyright--social" href=""><i class="fas fa-rss-square"></i></a>
+          <a class="copyright--social" href=""><i class="fab fa-instagram-square"></i></a>
+        </div>
+        <div>
+          <h2 class="md:text-sm text-xs text-gray-800 dark:text-skin-darkmode"> COPYRIGHT WOOCOMMERCE 2020 - TERMS &
+            CONDITIONS PRIVACY POLICY</h2>
+        </div>
+        <div >
+          <a href="#"><img class="w-40" src="images/footerlogo.png" alt="" loading="lazy"></a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
 
 
-</div>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/cash/1.3.0/cash.min.js'></script>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/cash/1.3.0/cash.min.js'></script>
   <script src="js/main.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/slider.js"></script>
 
   <script src="js/darkMode.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    function openSearch() {
+      document.getElementById("myOverlay").style.display = "block";
+    }
+    
+    function closeSearch() {
+      document.getElementById("myOverlay").style.display = "none";
+    }
+    </script>
+
+  <script>
+    AOS.init();
+  </script>
 </body>
 
 </html>
