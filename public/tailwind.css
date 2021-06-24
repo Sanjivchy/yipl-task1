@@ -1521,6 +1521,10 @@ video {
     height: 2.25rem;
   }
 
+  .md\:w-1\/2 {
+    width: 50%;
+  }
+
   .md\:w-full {
     width: 100%;
   }
