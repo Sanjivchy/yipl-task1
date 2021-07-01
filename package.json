@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build-css": "tailwindcss -i ./src/tailwind.css -o ./public/tailwind.css",
-    "production": "NODE_ENV=production npx tailwindcss -i ./src/tailwind.css -o ./public/tailwind.css"
+    "production": "NODE_ENV=production npx  tailwingcss -i ./src/tailwind.css -o ./public/tailwind.css"
   },
   "keywords": [],
   "author": "",
@@ -14,5 +14,8 @@
     "autoprefixer": "^10.2.6",
     "postcss": "^8.3.5",
     "tailwindcss": "^2.2.2"
+  },
+  "dependencies": {
+    "postcss-cli": "^8.3.1"
   }
 }

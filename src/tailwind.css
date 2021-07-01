@@ -12,9 +12,11 @@
         --color-secondaryfill:#9A7DFF;
         --color-darkfill:#374151;
     }
+
 #toggle:checked ~ label div.toggle-dot{
     @apply translate-x-3;
  }
+
 .nav--link{
     @apply px-3 py-5 capitalize text-skin-header dark:text-skin-darkmode hover:text-indigo-600 dark:hover:text-indigo-400;
 }
